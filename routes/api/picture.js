@@ -45,7 +45,7 @@ router.post(
       const newPicExt = '.' + splitedName[1];
       const newPicture = newPicName + newPicExt;
 
-      picture.mv(
+      await picture.mv(
         // `${__dirname}/../../../public/img/products/uploads/${newPicture}`,
         `${__dirname}/../../client/public/img/products/uploads/${newPicture}`,
         // `${__dirname}/../../client/build/img/products/uploads/${newPicture}`,
@@ -57,7 +57,7 @@ router.post(
         }
       );
 
-      picture.mv(
+      await picture.mv(
         // `${__dirname}/../../../public/img/products/uploads/${newPicture}`,
         // `${__dirname}/../../client/public/img/products/uploads/${newPicture}`,
         `${__dirname}/../../client/build/img/products/uploads/${newPicture}`,
