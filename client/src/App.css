@@ -1,22 +1,962 @@
-.App {
+/* 
+COLORS
+
+#e7717d     red
+#c2cad0     gray
+#c2b9b0     light-cream
+#7e685a     dark-cream
+#afd275     green
+
+
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+:root {
+  --main-bg-color: coral;
+  --red: #e7717d;
+  --gray: #c2cad0;
+  --light-cream: #c2b9b0;
+  --dark-cream: #7e685a;
+  --green: #afd275;
+  --white: #ffffff;
+
+  --top-nav: #c2cad0;
+  --sub-nav: #727171;
+  --footer-text: #172232;
+  /* --footer-text: #ffffff; */
+  /* --footer-background: #cccccc; */
+  --footer-background: #b6aeae;
+  --reviews-svg-background: #f1f0f0;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  color: #333333;
+
+  box-sizing: border-box;
+}
+
+.clearfix::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.6em;
+}
+h3 {
+  font-size: 1.1em;
+}
+
+.button {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 500;
+  color: var(--white);
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  box-shadow: 1px 2px 4px var(--top-nav);
+  /* background: #f59300; */
+  background: var(--red);
+}
+
+.icons i {
+  font-size: 3em;
+}
+
+.alert {
+  padding: 0.8rem;
+  margin: 1rem 0;
+  opacity: 0.9;
+  background: var(--light-cream);
+  color: #333;
+}
+
+.alert-danger {
+  background: red;
+  color: #ffffff;
+}
+
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* HEADER */
+header {
+  display: grid;
+  /* align-content: center; */
+  justify-items: center;
+  /* margin-bottom: 20px; */
+}
+
+/* ******************************************************************** */
+/* topNav */
+
+header .topNav {
+  /* position: absolute; */
+  position: relative;
+  /* background-color: #e7e7e79a; CHANGE AAA TOPNAV BACKGROUND COLOR  */
+  /* background-color: var(--gray); */ /* CHANGE AAA TOPNAV BACKGROUND COLOR  */
+
+  opacity: 0.8;
+  height: 45px;
+  width: 100%;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+}
+header .topNav .bodyTopNav {
+  width: 80%;
+  /* height: 45px; */
+  display: grid;
+  justify-content: end;
+  align-items: center;
+  /* background-color: yellow; */
+}
+
+header .topNav .bodyTopNav ul {
+}
+
+header .topNav .bodyTopNav ul li {
+  display: inline;
+  margin-left: 40px;
+}
+header .topNav .bodyTopNav ul li a {
+  font-size: 1em;
+  /* color: var(--dark-cream); */
+  font-weight: 500;
+}
+
+/* **************************************************************** */
+/* headerBody */
+.contentHead .headerBody {
+  display: grid;
+  width: 80%;
+  height: 600px;
+  box-sizing: border-box;
+  padding: 30px;
+  grid-gap: 30px;
+  background-color: #f8f7f7; /* CHANGE AAA COLOR*/
+
+  /* background  */
+  background-image: url('./img/mobile-phone.jpg');
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-position: auto;
+}
+
+.contentHead .headerBody .bodybody {
+  /* margin-top: 80px;
+  margin-left: 100px; */
+  /* margin: 80px 0 80px 100px; */
+  margin: 120px 0 80px 20%;
+}
+.contentHead .headerBody .bodybody > * {
+  margin-bottom: 50px;
+}
+
+.contentHead .headerBody h1 {
+  /* color: #a42121; */
+  font-size: 3em;
+  color: #e7717d;
+}
+.contentHead .headerBody h3 {
+  /* color: #a42121; */
+  font-size: 1.2em;
+  /* color: #e7717d; */
+}
+
+.contentHead .headerBody a {
+}
+
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* BODY */
+
+/* **************************************************************** */
+/* BODY NAV */
+.body .body-nav {
+  display: grid;
+  /* align-content: center; */
+  justify-items: center;
+  background-color: var(--sub-nav);
+}
+.body .body-nav ul li {
+  display: inline-block;
+  margin: 20px 30px;
+  /* font-size: 1.5em; */
+}
+
+/* I don't use BELLOW that anymore I switch to button bellow */
+.body .body-nav ul li a {
+  color: var(--white);
+  font-size: 1.2em;
+}
+/* I don't use UP that anymore I switch to button bellow */
+
+.body .body-nav ul li button {
+  color: var(--white);
+  font-size: 1.2em;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* **************************************************************** */
+/* BODY-BODY */
+
+.body .body-body {
+}
+
+/* **************************************************************** */
+/* search */
+.body .body-body .search {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: grid;
+  justify-items: center;
+}
+
+.body .body-body .search input {
+  border-radius: 50px;
+  padding: 8px 15px;
+  width: 400px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* **************************************************************** */
+/* items item */
+.body .body-body .items {
+  display: grid;
+  justify-content: center;
+  /* align-content: center; */
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  margin: 30px 50px;
+}
+
+.body .body-body .items .item {
+  display: grid;
+  grid-template: 'pic desc';
+  grid-template-columns: 1fr 3fr;
+  justify-content: center;
+  align-content: center;
+  box-sizing: border-box;
+  /* width: 500px;
+  height: 300px; */
+  border: 1px solid var(--top-nav);
+  border-radius: 50px;
+  padding: 25px 10px;
+}
+
+/* .body .body-body .items .item > * {
+  align-content: center;
+} */
+.body .body-body .items .itemPic {
+  grid-area: pic;
+  display: grid;
+  align-content: center;
+  /* justify-content: center; */
+}
+
+.body .body-body .items .itemDetails {
+  grid-area: desc;
+  margin-left: 15px;
+  display: grid;
+  grid-gap: 10px;
+  /* justify-items: center; */
+  align-content: center;
+}
+.body .body-body .items .itemDetails h3 {
+  font-size: 2em;
+}
+
+/* .body .body-body .items .itemPic, */
+.body .body-body .items .itemPic img {
+  width: 200px;
+  height: 200px;
+}
+
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* REVIEW REVIEWS */
+
+/* .review .review-detail */
+.body .body-body .reviews {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin-top: 230px;
+  /* margin-bottom: 100px; */
+  /* padding-top: 50px; */
+  padding-bottom: 80px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  /* color: red; */
+  background-color: var(--reviews-svg-background);
+}
+.body .body-body .reviews .review {
+  width: 350px;
+  margin-right: 50px;
+
+  font-style: italic;
+}
+.body .body-body .reviews .review .review-name {
+  display: flex;
+  margin-top: 10px;
+}
+.body .body-body .reviews .review .review-name::before {
+  content: '';
+  margin: auto 6px;
+  width: 20px;
+  height: 2px;
+  background-color: #172232;
+}
+
+.body .body-body .reviews .review .stars {
+  /* display: flex; */
+  /* justify-content: center; */
+}
+/* ================= */
+/* REVIEWS SVG */
+.reviewsSVG {
+  position: relative;
+  width: 100%;
+}
+
+#reviews_SVG {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  top: 0;
+}
+.reviews_SVG {
+  fill: var(--reviews-svg-background);
+}
+/* ================= */
+
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* FOOTER */
+
+.footer > div > * {
+  color: var(--footer-text);
+}
+
+.footer .title {
+  margin-top: 80px;
+  margin-bottom: 40px;
+  font-size: 1.8em;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 25px;
+  height: 500px;
+  background-color: var(--footer-background);
+}
+
+/* **************************************************************** */
+/* contact */
+
+.footer .contact {
+  display: grid;
+  justify-content: center;
+  align-content: start;
+}
+
+.footer .contact span {
+  font-size: 1.3em;
+}
+
+/* **************************************************************** */
+/* address */
+
+.footer .address {
+  display: grid;
+  justify-content: center;
+  align-content: start;
+}
+
+.footer .address span {
+  font-size: 1.1em;
+}
+
+.footer .address .address-details {
+  font-style: oblique;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+/* **************************************************************** */
+/* hours */
+
+.footer .hours {
+  display: grid;
+  justify-content: center;
+  align-content: start;
+}
+
+.footer .hours table tr .day {
+  padding-right: 15px;
+  font-size: 1.1em;
+}
+
+.footer .hours table tr > * {
+  padding-bottom: 15px;
+  font-size: 1.1em;
+  padding-right: 10px;
+}
+
+/* **************************************************************** */
+/* copyright */
+
+.footer .copyright {
+  grid-column: 1 / span 3;
+  display: grid;
+
+  justify-content: center;
+  align-content: flex-end;
+
+  letter-spacing: 2px;
+}
+
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* REGISTER */
+/* ////////////////////////////////////////////////////////////////////////////// */
+
+.registerPage {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  height: calc(100vh - 45px);
+}
+
+.registerPage .formsHeader {
+  margin-bottom: 55px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+  border-bottom: #333333 solid 1px;
+}
+.registerPage .formsHeader .icons {
+}
+.registerPage .formsHeader .icons i {
+  float: left;
+}
+.registerPage .formsHeader h1 {
+}
+
+.form {
+  /* width: 90%; */
+}
+
+.form .form-group {
+  /* width: 90%; */
+  display: grid;
+  margin-bottom: 1em;
+}
+
+.form .form-group input {
+  width: 500px;
+  padding: 7px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+/* .form .form-group  */
+
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* PAGINATING PAGE */
+/* ////////////////////////////////////////////////////////////////////////////// */
+.pagination {
+  position: relative;
+  margin-bottom: 100px;
+  /* width: 90%; */
+  /* margin: 0 auto; */
+}
+.pagination ul {
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+}
+
+.pagination ul > li {
+  display: inline;
+  /* box-sizing: border-box; */
+  margin-right: 20px;
+
+  /* margin-bottom: 50px; */
+  /* margin: 20px auto */
+  /* width: 90%; */
+  /* margin: 0 auto; */
+}
+
+.pagination ul li button {
+  width: 60px;
+  height: 35px;
+
+  border: none;
+  border-radius: 100px;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+
+.pagination ul li .otherPages {
+  background-color: #e2f1fd;
+  color: #172232;
+}
+.pagination ul li .currentPage {
+  background-color: #eef6fd;
+  color: rgb(250, 187, 187);
+}
+
+/* **************************************************************** */
+/* **************************************************************** */
+/* FIX PAGE */
+/* **************************************************************** */
+.fix-layout {
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+
+.fix-layout .fix-title {
+  font-size: 2.5em;
+  color: var(--red);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.fix-layout .fix-title-detail {
+  text-align: center;
+  font-size: 1.3em;
+  color: var(--footer-text);
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.fix-layout .fix-selected {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.fix-layout .fix-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.fix-layout .lay-tree {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.fix-layout .fix-items .fix-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 80%;
+  height: 200px;
+  width: 80%;
+  border: 1px #172232 solid;
+  border-radius: 60px;
+  margin: 15px;
+  justify-self: center;
+  cursor: pointer;
+  /* width: 300 */
+  /* background-color: #c2cad0; */
+}
+
+.fix-layout .fix-items .fix-item .fix-hover {
+  z-index: 10;
+  border-radius: 60px;
+  width: 100%;
+  height: 100%;
+  background-color: #bdbcbc50;
+  position: absolute;
+  display: none;
+}
+
+.fix-layout .fix-items .fix-item:hover .fix-hover {
+  display: block;
+}
+
+.fix-layout .fix-items .fix-item img {
+  width: 60%;
+  height: 80%;
+  /* margin-top: 50px; */
+  justify-self: center;
+  align-self: center;
+  border-radius: 30px 30px 0 0;
+  /* background-color: #a7a7a7; */
+  /* height: 100%; */
+  /* height: 300px; */
+}
+
+.fix-layout .fix-items .fix-item span {
+  /* display: block; */
+  justify-self: center;
+  align-self: end;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.3em;
+}
+
+.fix-layout .buttons {
+  margin: auto 10px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  width: 300px;
+  height: 100px;
 }
 
-.App-link {
-  color: #09d3ac;
+.fix-layout .buttons .back {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.5em;
+  padding: 20px;
+  background-color: var(--red);
+  color: var(--white);
+  border-radius: 60px 0 0 60px;
+}
+
+.fix-layout .imp {
+  font-size: 1.1em;
+  color: #290713;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* ///////////////////////////////// */
+/* BOOKING SUBMIT FORM */
+/* ////////////////////////////// */
+/* ///////////////////////////////// */
+
+.fix-layout .bookingForm {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.fix-layout .bookingForm form {
+  display: flex;
+  flex-direction: column;
+}
+
+.fix-layout .bookingForm form .formGroup {
+  margin-bottom: 20px;
+}
+
+.fix-layout .bookingForm form .formGroup label {
+  display: block;
+}
+
+.fix-layout .bookingForm form .formGroup input[type='text'],
+.fix-layout .bookingForm form .formGroup input[type='tel'],
+.fix-layout .bookingForm form .formGroup input[type='email'] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+.fix-layout .bookingForm form .formGroup input[type='text']:focus,
+.fix-layout .bookingForm form .formGroup input[type='tel']:focus,
+.fix-layout .bookingForm form .formGroup input[type='email']:focus {
+  border: 3px solid #555;
+}
+.fix-layout .bookingForm form .formGroup #date {
+  width: 100%;
+}
+
+.fix-layout .bookingForm form .formGroup #hours {
+  width: 100%;
+}
+
+.fix-layout .bookingForm form .formGroup .booking-textarea {
+  width: 100%;
+  height: 5rem;
+}
+
+.fix-layout .bookingForm form input[type='submit'] {
+  font-size: 1.4rem;
+  padding: 10px 35px;
+  border: none;
+  background-color: var(--red);
+  color: var(--white);
+  align-self: flex-end;
+}
+
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* MOBILE FRIENDLY */
+/* ////////////////////////////////////////////////////////////////////////////// */
+
+@media screen and (max-width: 790px) {
+  /* ////////////////////////////////////////////////////////////////////////////// */
+  /* HEADER */
+  header {
+    /* @TODO make open close navbar */
+    justify-items: end;
+  }
+
+  /* ////////////////////////////////////////////////////////////////////////////// */
+  /* Landing  headerBody */
+
+  .contentHead .headerBody {
+    width: 100%;
+    height: 100vh;
+
+    /* background */
+    background-size: fill;
+    background-position: top;
+  }
+
+  .contentHead .headerBody .bodybody {
+    background-color: #ffffff75;
+    border-radius: 0 180px 180px;
+    height: 440px;
+    padding: 30px;
+    /* padding-right: -50px; */
+    margin: auto auto;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    /* width: 100%; */
+    /* height: 100%; */
+  }
+
+  .contentHead .headerBody h3 {
+    color: #2b2626;
+    /* border: 1px solid white; */
+    background-color: #99999998;
+    border-radius: 90px;
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 20px;
+  }
+
+  /* ////////////////////////////////////////////////////////////////////////////// */
+  /* BODY*/
+
+  /* **************************************************************** */
+  /* BODY NAV */
+  .body .body-nav ul li {
+    display: block;
+  }
+  .body .body-nav ul li button {
+    font-size: 1.4em;
+  }
+
+  /* ////////////////////////////////////////////////////////////////////////////// */
+  /* Landing  body-body ProductsListing */
+
+  /* search */
+  .body .body-body .search input {
+    width: 100vw;
+    height: 60px;
+    font-size: 2em;
+    padding-left: 30px;
+  }
+
+  /* items item */
+  .body .body-body .items {
+    display: block;
+    /* grid-template-columns: 1fr; */
+    margin: 30px 0;
+  }
+
+  .body .body-body .items .item {
+    /* grid-template: 'pic' 'desc'; */
+    /* grid-template-columns: 1fr; */
+    display: block;
+    width: 95%;
+    margin: 20px auto;
+  }
+
+  .body .body-body .items .itemPic {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+  }
+
+  .body .body-body .items .itemPic img {
+    /* width: 80%; */
+  }
+
+  /* ////////////////////////////////////////////////////////////////////////////// */
+  /* REVIEW REVIEWS */
+
+  /* .review .review-detail */
+  .body .body-body .reviews {
+    display: block;
+    margin-top: 150px;
+  }
+
+  /* .review .review-detail */
+  .body .body-body .reviews .review {
+    width: 100%;
+    padding: 30px;
+  }
+
+  /* ////////////////////////////////////////////////////////////////////////////// */
+  /* FOOTER */
+
+  .footer {
+    display: block;
+    height: 100%;
+  }
+
+  .footer .address {
+    display: block;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .footer .address .address-details {
+    display: block;
+  }
+  /* **************************************************************** */
+  /* copyright */
+
+  .footer .copyright {
+    margin-top: 30px;
+  }
+  .footer .copyright::before {
+    content: '-------------------------------------';
+    margin: 5px auto;
+  }
+
+  /* ////////////////////////////////////////////////////////////////////////////// */
+  /* ////////////////////////////////////////////////////////////////////////////// */
+  /* REGISTER */
+  /* ////////////////////////////////////////////////////////////////////////////// */
+
+  .registerPage {
+    /* height: 100vh; */
+    /* width: 100vw; */
+    /* align-content: flex-start; */
+    /* margin-top: 100px; */
+  }
+
+  .form .form-group input {
+    width: 100%;
+  }
+
+  /* ////////////////////////////////////////////////////////////////////////////// */
+  /* ////////////////////////////////////////////////////////////////////////////// */
+  /* PAGINATING PAGE */
+  /* ////////////////////////////////////////////////////////////////////////////// */
+
+  .pagination ul > li {
+    display: inline;
+    margin-right: 10px;
+  }
+
+  .pagination ul li button {
+    width: 30px;
+    height: 25px;
+
+    border-radius: 60px;
+    font-size: 1em;
+  }
+}
+
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* LAPTOP AND SMALL SCREEN COMPUTERS FRIENDLY */
+/* ////////////////////////////////////////////////////////////////////////////// */
+
+@media screen and (min-width: 790px) and (max-width: 1700px) {
+  /* **************************************************************** */
+  /* headerBody */
+  .contentHead .headerBody {
+    width: 100%;
+    background-position: top;
+  }
+
+  .contentHead .headerBody .bodybody {
+    margin: 100px 0 0 40px;
+  }
+
+  .contentHead .headerBody .bodybody a {
+    /* display: block; */
+    /* width: 400px; */
+  }
+
+  /* **************************************************************** */
+  /* items item */
+  .body .body-body .items .item {
+    /* margin: 0; */
+    display: block;
+    /* text-align: center; */
+  }
+
+  .body .body-body .items .itemPic {
+    justify-content: center;
+  }
+  .body .body-body .items .itemDetails h3,
+  .body .body-body .items .itemDetails h6 {
+    text-align: center;
+  }
+
+  /* ////////////////////////////////////////////////////////////////////////////// */
+  /* REVIEW REVIEWS */
+
+  .body .body-body .reviews {
+    padding-left: 50px;
+  }
 }

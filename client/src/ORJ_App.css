@@ -1,0 +1,340 @@
+/* 
+COLORS
+
+#e7717d     red
+#c2cad0     gray
+#c2b9b0     light-cream
+#7e685a     dark-cream
+#afd275     green
+
+
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+:root {
+  --main-bg-color: coral;
+  --red: #e7717d;
+  --gray: #c2cad0;
+  --light-cream: #c2b9b0;
+  --dark-cream: #7e685a;
+  --green: #afd275;
+  --white: #ffffff;
+
+  --top-nav: #c2cad0;
+  --sub-nav: #727171;
+  --footer-text: #172232;
+  /* --footer-text: #ffffff; */
+  --footer-background: #aaa9a9;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  color: #333333;
+
+  box-sizing: border-box;
+}
+
+.clearfix::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.6em;
+}
+h3 {
+  font-size: 1.1em;
+}
+
+.button {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 500;
+  color: var(--white);
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  box-shadow: 1px 2px 4px var(--top-nav);
+  /* background: #f59300; */
+  background: var(--red);
+}
+
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* HEADER */
+header {
+  display: grid;
+  /* align-content: center; */
+  justify-items: center;
+}
+
+/* ******************************************************************** */
+/* topNav */
+
+header .topNav {
+  position: absolute;
+  /* background-color: #e7e7e79a; CHANGE AAA TOPNAV BACKGROUND COLOR  */
+  /* background-color: var(--gray); */ /* CHANGE AAA TOPNAV BACKGROUND COLOR  */
+
+  opacity: 0.8;
+  height: 45px;
+  width: 100%;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+}
+header .topNav .bodyTopNav {
+  width: 80%;
+  /* height: 45px; */
+  display: grid;
+  justify-content: end;
+  align-items: center;
+  /* background-color: yellow; */
+}
+
+header .topNav .bodyTopNav ul {
+}
+
+header .topNav .bodyTopNav ul li {
+  display: inline;
+  margin-left: 40px;
+}
+header .topNav .bodyTopNav ul li a {
+  font-size: 1em;
+  /* color: var(--dark-cream); */
+  font-weight: 500;
+}
+
+/* **************************************************************** */
+/* headerBody */
+header .headerBody {
+  display: grid;
+  width: 80%;
+  height: 600px;
+  box-sizing: border-box;
+  padding: 30px;
+  grid-gap: 30px;
+  background-color: #f8f7f7; /* CHANGE AAA COLOR*/
+
+  /* background  */
+  background-image: url('./img/mobile-phone.jpg');
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-position: auto;
+}
+
+header .headerBody .bodybody {
+  /* margin-top: 80px;
+  margin-left: 100px; */
+  /* margin: 80px 0 80px 100px; */
+  margin: 120px 0 80px 20%;
+}
+header .headerBody .bodybody > * {
+  margin-bottom: 50px;
+}
+
+header .headerBody h1 {
+  /* color: #a42121; */
+  font-size: 3em;
+  color: #e7717d;
+}
+header .headerBody h3 {
+  /* color: #a42121; */
+  font-size: 1.2em;
+  /* color: #e7717d; */
+}
+
+header .headerBody a {
+}
+
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* BODY */
+
+/* **************************************************************** */
+/* BODY NAV */
+.body .body-nav {
+  display: grid;
+  /* align-content: center; */
+  justify-items: center;
+  background-color: var(--sub-nav);
+}
+.body .body-nav ul li {
+  display: inline-block;
+  margin: 20px 30px;
+  /* font-size: 1.5em; */
+}
+.body .body-nav ul li a {
+  color: var(--white);
+  font-size: 1.2em;
+}
+
+/* **************************************************************** */
+/* BODY-BODY */
+
+.body .body-body {
+}
+
+/* **************************************************************** */
+/* search */
+.body .body-body .search {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: grid;
+  justify-items: center;
+}
+
+.body .body-body .search input {
+  border-radius: 50px;
+  padding: 8px 15px;
+  width: 400px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* **************************************************************** */
+/* items item */
+.body .body-body .items {
+  display: grid;
+  justify-content: center;
+  /* align-content: center; */
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  margin: 30px 50px;
+}
+
+.body .body-body .items .item {
+  display: grid;
+  grid-template: 'pic desc';
+  grid-template-columns: 1fr 3fr;
+  justify-content: center;
+  align-content: center;
+  box-sizing: border-box;
+  /* width: 500px;
+  height: 300px; */
+  border: 1px solid var(--top-nav);
+  border-radius: 50px;
+  padding: 25px 10px;
+}
+
+/* .body .body-body .items .item > * {
+  align-content: center;
+} */
+.body .body-body .items .itemPic {
+  grid-area: pic;
+  display: grid;
+  align-content: center;
+  /* justify-content: center; */
+}
+
+.body .body-body .items .itemDetails {
+  grid-area: desc;
+  margin-left: 15px;
+  display: grid;
+  grid-gap: 10px;
+  /* justify-items: center; */
+  align-content: center;
+}
+.body .body-body .items .itemDetails h3 {
+  font-size: 2em;
+}
+
+/* .body .body-body .items .itemPic, */
+.body .body-body .items .itemPic img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+}
+
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* FOOTER */
+
+.footer > div > * {
+  color: var(--footer-text);
+}
+
+.footer .title {
+  margin-top: 80px;
+  margin-bottom: 40px;
+  font-size: 1.8em;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 25px;
+  height: 500px;
+  background-color: var(--footer-background);
+}
+
+/* **************************************************************** */
+/* contact */
+
+.footer .contact {
+  display: grid;
+  justify-content: center;
+  align-content: start;
+}
+
+.footer .contact span {
+  font-size: 1.3em;
+}
+
+/* **************************************************************** */
+/* address */
+
+.footer .address {
+  display: grid;
+  justify-content: center;
+  align-content: start;
+}
+
+.footer .address span {
+  font-size: 1.1em;
+}
+
+.footer .address .address-details {
+  font-style: oblique;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+/* **************************************************************** */
+/* hours */
+
+.footer .hours {
+  display: grid;
+  justify-content: center;
+  align-content: start;
+}
+
+.footer .hours table tr .day {
+  padding-right: 15px;
+  font-size: 1.1em;
+}
+
+.footer .hours table tr > * {
+  padding-bottom: 15px;
+  font-size: 1.1em;
+  padding-right: 10px;
+}
+
+/* **************************************************************** */
+/* copyright */
+
+.footer .copyright {
+  grid-column: 1 / span 3;
+  display: grid;
+
+  justify-content: center;
+  align-content: flex-end;
+
+  letter-spacing: 2px;
+}
