@@ -46,7 +46,8 @@ router.post(
       const newPicture = newPicName + newPicExt;
 
       picture.mv(
-        `${__dirname}/../../../public/img/products/uploads/${newPicture}`,
+        // `${__dirname}/../../../public/img/products/uploads/${newPicture}`,
+        `${__dirname}/../../client/public/img/products/uploads/${newPicture}`,
         err => {
           if (err) {
             console.error(err);
