@@ -1,0 +1,7 @@
+{
+  // "mongoURI": "mongodb+srv://enis:159159159@udemymern-h6dmz.mongodb.net/touchserver?retryWrites=true&w=majority",
+  "mongoURI": "mongodb+srv://enis:159159159@udemymern-h6dmz.mongodb.net/touchtel?retryWrites=true&w=majority",
+  // "jwtSecret": "Nab1y0nKik!k!.",
+  "jwtSecret": "s0Kuk-0066!!LaaaaaaNN@",
+  "secretExp": 3600
+}
